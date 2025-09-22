@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -14,13 +15,13 @@ export default function App() {
   }, []);
 
   const preview = images.length > 0 ? images[0] : null;
-  const galleryImages = images.slice(1); // start gallery from second image
+  const galleryImages = images.slice(1);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-100 via-purple-100 to-blue-100 text-gray-800 antialiased">
       <header className="max-w-5xl mx-auto p-6 flex items-center justify-between">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight text-purple-700">MostlyEveryWeekend — Art</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-purple-700">🎨 MostlyEveryWeekend — Art</h1>
           <p className="mt-1 text-sm text-purple-600">A little corner to share my creative work</p>
         </div>
         <nav className="flex items-center gap-4">
@@ -42,26 +43,44 @@ export default function App() {
       <main className="max-w-5xl mx-auto p-6">
         <section id="about" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
-            <h3 className="text-2xl font-semibold text-purple-700 mb-4">About Me</h3>
+            <h3 className="text-2xl font-semibold text-purple-700 mb-4">🙋 About Me</h3>
             <p className="text-gray-700 leading-relaxed">
               I’m Ishita Sinha — a product manager who finds creative release in art.
               Most weekends you’ll find me sketching or experimenting with color, inspired by everyday life.
               This space blends my love for design, storytelling, and playful exploration beyond work.
             </p>
+            <div className="mt-4 flex gap-3">
+              <a
+                href="https://instagram.com/mostlyeveryweekend"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg shadow bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400"
+              >
+                <FaInstagram /> Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ishita-sinha/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg shadow bg-gradient-to-r from-blue-200 to-blue-300 text-purple-800 hover:from-blue-300 hover:to-blue-400"
+              >
+                <FaLinkedin /> LinkedIn
+              </a>
+            </div>
           </div>
           {preview && (
-            <div className="rounded-xl overflow-hidden shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2">
+            <div className="rounded-full overflow-hidden shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2 w-48 h-48 mx-auto">
               <img
                 src={preview}
                 alt="Preview"
-                className="max-h-80 w-auto object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           )}
         </section>
 
         <section id="gallery">
-          <h3 className="text-2xl font-semibold text-purple-700 mb-4">Gallery</h3>
+          <h3 className="text-2xl font-semibold text-purple-700 mb-4">🖼️ Gallery</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {galleryImages.map((src, idx) => (
               <motion.figure
@@ -98,7 +117,7 @@ export default function App() {
       <footer className="mt-16 py-8 border-t border-purple-200 bg-purple-50">
         <div className="max-w-5xl mx-auto p-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-purple-700">
-            © {new Date().getFullYear()} MostlyEveryWeekend — Made with creativity & pastels
+            ✨ © {new Date().getFullYear()} MostlyEveryWeekend — Made with creativity & pastels
           </div>
           <div className="flex items-center gap-4 text-sm text-purple-600">
             <a href="https://instagram.com/mostlyeveryweekend" target="_blank" rel="noreferrer">
