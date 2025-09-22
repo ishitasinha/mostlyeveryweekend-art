@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+const { defineConfig } = require('vite');
+const react = require('@vitejs/plugin-react');
 
-// Replace 'mostlyeveryweekend-art' with your repository name if different
-export default defineConfig({
+module.exports = defineConfig({
   base: '/mostlyeveryweekend-art/',
   plugins: [react()],
-})
+});
