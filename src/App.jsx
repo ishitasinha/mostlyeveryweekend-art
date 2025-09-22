@@ -73,7 +73,7 @@ export default function App() {
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8 }}
-              src= IMAGE_ME
+              src= {IMAGE_ME}
               alt="Art highlight"
               className="w-full h-64 object-cover"
             />
