@@ -1,8 +1,12 @@
-// vite.config.js
+// vite.config.cjs
 const { defineConfig } = require('vite');
-const react = require('@vitejs/plugin-react');
 
-module.exports = defineConfig({
-  base: '/mostlyeveryweekend-art/',
-  plugins: [react()],
-});
+module.exports = async () => {
+  // dynamic import of the ESM-only plugin (works from CommonJS)
+  const reactPlugin = (await import('@vitejs/plugin-react')).default;
+
+  return defineConfig({
+    base: '/mostlyeveryweekend-art/',
+    plugins: [reactPlugin()],
+  });
+};
