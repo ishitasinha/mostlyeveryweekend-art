@@ -6,9 +6,9 @@ export default function App() {
 
   useEffect(() => {
     const loaded = [];
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 7; i++) {
       const filename = i.toString().padStart(2, "0") + ".png";
-      loaded.push(`/images/${filename}`);
+      loaded.push(`images/${filename}`);
     }
     setImages(loaded);
   }, []);
