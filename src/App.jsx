@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const IMAGES = [
-  "/images/02.png",
-  "/images/03.png",
-  "/images/04.png",
-  "/images/05.png",
-  "/images/06.png",
+  "../public/images/02.png",
+  "../public/images/03.png",
+  "../public/images/04.png",
+  "../public/images/05.png",
+  "../public/images/06.png",
 ];
 
-const IMAGE_ME = "/images/01.png";
+const IMAGE_ME = "..public/images/01.png";
 
 export default function App() {
   return (
