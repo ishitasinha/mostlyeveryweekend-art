@@ -2,11 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const IMAGES = [
-  "/images/01.jpg",
-  "/images/02.jpg",
-  "/images/03.jpg",
-  "/images/04.jpg",
+  "/images/02.png",
+  "/images/03.png",
+  "/images/04.png",
+  "/images/05.png",
+  "/images/06.png",
 ];
+
+const IMAGE_ME = "/images/01.png";
 
 export default function App() {
   return (
@@ -70,7 +73,7 @@ export default function App() {
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8 }}
-              src={IMAGES[0]}
+              src= IMAGE_ME
               alt="Art highlight"
               className="w-full h-64 object-cover"
             />
