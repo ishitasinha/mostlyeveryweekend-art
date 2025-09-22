@@ -1,13 +1,109 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MostlyEveryWeekend — Art</title>
-    <script type="module" crossorigin src="/mostlyeveryweekend-art/assets/index-878FeR95.js"></script>
-    <link rel="stylesheet" crossorigin href="/mostlyeveryweekend-art/assets/index-CMCfcq3Z.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pastel paper background */
+:root{
+  --pastel-1: #FDE8F2; /* pale pink */
+  --pastel-2: #E8F8FF; /* pale blue */
+  --pastel-3: #F6F9E9; /* pale green */
+  --accent: #FFC9DE;   /* soft accent */
+  --muted: #6B7280;
+  --card: #FFFFFFCC;
+  --footer: #FFF8F2;
+}
+
+/* Body background as soft gradient */
+.site-root{
+  background: linear-gradient(180deg, var(--pastel-1) 0%, var(--pastel-2) 50%, var(--pastel-3) 100%);
+}
+
+/* Brand styling */
+.brand{
+  background: linear-gradient(90deg, #FF9AA2, #FFB7B2, #FFDAC1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Muted text */
+.text-muted, .muted {
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg,#FFD1DC,#CDEBFF);
+  padding: .5rem 1rem;
+  border-radius: .75rem;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  color: #111827;
+  text-decoration: none;
+}
+.btn-primary:hover { transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px dashed rgba(0,0,0,0.06);
+  padding: .5rem 1rem;
+  border-radius: .75rem;
+  color: #111827;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.04);
+  padding: .4rem .75rem;
+  border-radius: .6rem;
+  text-decoration: none;
+}
+
+/* Highlight card */
+.highlight-card img{
+  transition: transform .28s ease;
+}
+
+/* Section titles */
+.section-title{
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: linear-gradient(90deg,#FFD1DC,#CDEBFF);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* About card */
+.about-card{
+  border: 1px solid rgba(0,0,0,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+}
+
+/* Footer */
+.bg-footer{
+  background: linear-gradient(90deg, rgba(255,250,245,1), rgba(245,255,250,1));
+}
+
+/* code block style */
+.code{
+  background: rgba(255,255,255,0.6);
+  padding: .125rem .4rem;
+  border-radius: .25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: .9rem;
+}
+
+/* Download link */
+.download-link{
+  font-size: .75rem;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
+  border: 1px solid rgba(0,0,0,0.06);
+  text-decoration: none;
+}
+
+/* small responsive tweak */
+@media (max-width: 640px){
+  .brand { font-size: 1.75rem; }
+}
