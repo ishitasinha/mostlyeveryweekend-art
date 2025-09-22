@@ -1,0 +1,49 @@
+name: Fetch Instagram images (build-time)
+
+# Run manually or on a schedule (weekly by default)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday at 06:00 UTC — adjust as you like
+
+permissions:
+  contents: write   # needed so this workflow can commit images back to the repo
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Create images folder if missing
+        run: mkdir -p public/images
+
+      - name: Fetch Instagram images
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          node .github/scripts/fetch_instagram.js
+
+      - name: Show downloaded files
+        run: ls -la public/images || true
+
+      - name: Commit and push images (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update Instagram images (automated)"
+            git push origin HEAD:main
+          fi
