@@ -7,6 +7,7 @@ const IMAGES = [
   "images/04.png",
   "images/05.png",
   "images/06.png",
+  "images/07.png"
 ];
 
 const IMAGE_ME = "images/01.png";
