@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaMedium } from "react-icons/fa";
 
 export default function App() {
   const [images, setImages] = useState([]);
@@ -19,7 +19,7 @@ export default function App() {
   const galleryImages = images.slice(1);
 
   const handleImageLoad = (e) => {
-    setPreviewSize({ width: e.target.naturalWidth / 2, height: e.target.naturalHeight / 2 });
+    setPreviewSize({ width: e.target.naturalWidth / 3, height: e.target.naturalHeight / 3 });
   };
 
   return (
@@ -49,33 +49,49 @@ export default function App() {
         <section id="about" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <h3 className="text-2xl font-semibold text-purple-700 mb-4">🙋 About Me</h3>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed mb-2">
               I’m Ishita Sinha — a product manager who finds creative release in art.
               Most weekends you’ll find me sketching or experimenting with color, inspired by everyday life.
               This space blends my love for design, storytelling, and playful exploration beyond work.
             </p>
-            <div className="mt-4 flex gap-3">
+            <p className="text-gray-700 leading-relaxed mb-2">
+              Beyond my professional work, I enjoy translating complex ideas into simple, creative outputs. 
+              Art allows me to experiment freely with shapes, textures, and colors, while my product background influences how I approach structure and design thinking. 
+              I believe creativity bridges work and play, and this site is where I share those bridges.
+            </p>
+            <div className=\"mt-4 flex flex-wrap gap-3\">
               <a
-                href="https://instagram.com/mostlyeveryweekend"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg shadow bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400"
+                href=\"https://instagram.com/mostlyeveryweekend\"
+                target=\"_blank\"
+                rel=\"noreferrer\"
+                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
               >
                 <FaInstagram /> Instagram
               </a>
               <a
-                href="https://www.linkedin.com/in/ishita-sinha/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg shadow bg-gradient-to-r from-blue-200 to-blue-300 text-purple-800 hover:from-blue-300 hover:to-blue-400"
+                href=\"https://www.linkedin.com/in/ishita-sinha/\"
+                target=\"_blank\"
+                rel=\"noreferrer\"
+                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
               >
                 <FaLinkedin /> LinkedIn
+              </a>
+              <a
+                href=\"https://medium.com/@ishitasinha\"
+                target=\"_blank\"
+                rel=\"noreferrer\"
+                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
+              >
+                <FaMedium /> Medium
               </a>
             </div>
           </div>
 
           {preview && (
-            <div className="overflow-auto shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2" style={{ width: previewSize.width, height: previewSize.height }}>
+            <div
+              className="overflow-auto shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2"
+              style={{ width: previewSize.width, height: previewSize.height }}
+            >
               <img
                 src={preview}
                 alt="Preview"
