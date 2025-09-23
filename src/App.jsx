@@ -19,7 +19,7 @@ export default function App() {
   const galleryImages = images.slice(1);
 
   const handleImageLoad = (e) => {
-    setPreviewSize({ width: e.target.naturalWidth, height: e.target.naturalHeight });
+    setPreviewSize({ width: e.target.naturalWidth / 2, height: e.target.naturalHeight / 2 });
   };
 
   return (
