@@ -55,32 +55,32 @@ export default function App() {
               This space blends my love for design, storytelling, and playful exploration beyond work.
             </p>
             <p className="text-gray-700 leading-relaxed mb-2">
-              Beyond my professional work, I enjoy translating complex ideas into simple, creative outputs. 
-              Art allows me to experiment freely with shapes, textures, and colors, while my product background influences how I approach structure and design thinking. 
+              Beyond my professional work, I enjoy translating complex ideas into simple, creative outputs.
+              Art allows me to experiment freely with shapes, textures, and colors, while my product background influences how I approach structure and design thinking.
               I believe creativity bridges work and play, and this site is where I share those bridges.
             </p>
-            <div className=\"mt-4 flex flex-wrap gap-3\">
+            <div className="mt-4 flex flex-wrap gap-3">
               <a
-                href=\"https://instagram.com/mostlyeveryweekend\"
-                target=\"_blank\"
-                rel=\"noreferrer\"
-                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
+                href="https://instagram.com/mostlyeveryweekend"
+                target="_blank"
+                rel="noreferrer"
+                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:shadow-purple-200 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
               >
                 <FaInstagram /> Instagram
               </a>
               <a
-                href=\"https://www.linkedin.com/in/ishita-sinha/\"
-                target=\"_blank\"
-                rel=\"noreferrer\"
-                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
+                href="https://www.linkedin.com/in/ishita-sinha/"
+                target="_blank"
+                rel="noreferrer"
+                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:shadow-purple-200 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
               >
                 <FaLinkedin /> LinkedIn
               </a>
               <a
-                href=\"https://medium.com/@ishitasinha\"
-                target=\"_blank\"
-                rel=\"noreferrer\"
-                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
+                href="https://medium.com/@ishitasinha"
+                target="_blank"
+                rel="noreferrer"
+                className=\"flex items-center gap-2 px-4 py-2 rounded-lg shadow transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:shadow-purple-200 bg-gradient-to-r from-pink-200 to-pink-300 text-purple-800 hover:from-pink-300 hover:to-pink-400\"
               >
                 <FaMedium /> Medium
               </a>
@@ -108,7 +108,7 @@ export default function App() {
             {galleryImages.map((src, idx) => (
               <motion.figure
                 key={`${src}-${idx}`}
-                className="relative rounded-xl overflow-hidden bg-white shadow-md ring-2 ring-purple-100"
+                className=\"relative rounded-xl overflow-hidden bg-white shadow-md ring-2 ring-purple-100 transform transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:shadow-purple-200\"
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
