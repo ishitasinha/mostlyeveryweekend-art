@@ -4,18 +4,23 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function App() {
   const [images, setImages] = useState([]);
+  const [previewSize, setPreviewSize] = useState({ width: "auto", height: "auto" });
 
   useEffect(() => {
     const loaded = [];
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 20; i++) {
       const filename = i.toString().padStart(2, "0") + ".png";
-      loaded.push(`images/${filename}`);
+      loaded.push(`/images/${filename}`);
     }
     setImages(loaded);
   }, []);
 
   const preview = images.length > 0 ? images[0] : null;
   const galleryImages = images.slice(1);
+
+  const handleImageLoad = (e) => {
+    setPreviewSize({ width: e.target.naturalWidth, height: e.target.naturalHeight });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-100 via-purple-100 to-blue-100 text-gray-800 antialiased">
@@ -70,14 +75,12 @@ export default function App() {
           </div>
 
           {preview && (
-            // Preview container now preserves the original image aspect ratio and displays the image "as-is".
-            // The image is constrained by a max width so it doesn't overflow the layout, but it is not cropped.
-            <div className="overflow-hidden shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2">
+            <div className="overflow-auto shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2" style={{ width: previewSize.width, height: previewSize.height }}>
               <img
                 src={preview}
                 alt="Preview"
-                // show image at its natural aspect ratio; scale down if wider than 320px but do not crop
-                style={{ maxWidth: 320, width: 'auto', height: 'auto' }}
+                onLoad={handleImageLoad}
+                style={{ display: "block" }}
               />
             </div>
           )}
