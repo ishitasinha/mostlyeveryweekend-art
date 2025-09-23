@@ -68,12 +68,16 @@ export default function App() {
               </a>
             </div>
           </div>
+
           {preview && (
-            <div className="rounded-full overflow-hidden shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2 w-48 h-48 mx-auto">
+            // Preview container now preserves the original image aspect ratio and displays the image "as-is".
+            // The image is constrained by a max width so it doesn't overflow the layout, but it is not cropped.
+            <div className="overflow-hidden shadow-md ring-2 ring-purple-100 flex justify-center items-center bg-white p-2">
               <img
                 src={preview}
                 alt="Preview"
-                className="w-full h-full object-cover"
+                // show image at its natural aspect ratio; scale down if wider than 320px but do not crop
+                style={{ maxWidth: 320, width: 'auto', height: 'auto' }}
               />
             </div>
           )}
